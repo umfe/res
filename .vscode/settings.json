@@ -1,0 +1,48 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "never",
+		"source.organizeImports": "never",
+		"source.sortMembers": "explicit"
+	},
+	"js/ts.preferences.importModuleSpecifierEnding": "minimal",
+
+	"prettier.useEditorConfig": false,
+	"prettier.semi": false,
+	"prettier.singleQuote": true,
+	"prettier.printWidth": 100,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"prettier.trailingComma": "all",
+
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"files.encoding": "utf8",
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"files.associations": {
+		"*.wxss": "css",
+		"*.wxs": "javascript"
+	},
+	"emmet.includeLanguages": {
+		"wxml": "html"
+	},
+	"[wxml]": {
+		"editor.defaultFormatter": "qiu8310.minapp-vscode"
+	},
+	"[markdown]": {
+		"files.trimTrailingWhitespace": false
+	}
+}
