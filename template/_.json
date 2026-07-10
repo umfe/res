@@ -1,0 +1,14 @@
+{
+	"items": {
+		"cover": {
+			"files": [
+				".claude/settings.local.json",
+				".editorconfig",
+				".vscode/extensions.json",
+				".vscode/settings.json",
+				"AGENTS.md",
+				"CLAUDE.md"
+			]
+		}
+	}
+}

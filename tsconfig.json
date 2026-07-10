@@ -1,0 +1,22 @@
+{
+	// scripts/ 目录使用 tsx 运行 TypeScript，这份配置主要用于让编辑器/类型检查器
+	// 正确理解 ESM 下带 .ts 扩展名的相对导入（tsx 运行时本身支持）。
+	"compilerOptions": {
+		// 目标与模块系统：现代 Node + ESM
+		"target": "ES2022",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		// 允许在 import 语句里显式写 .ts 扩展名（配合 tsx / bundler 解析）
+		"allowImportingTsExtensions": true,
+		// 只做类型检查，不产出 js（由 tsx 负责运行）
+		"noEmit": true,
+		// 严格模式，提升类型安全
+		"strict": true,
+		// 允许 default import 互操作
+		"esModuleInterop": true,
+		// 跳过第三方库声明文件的类型检查，加快速度
+		"skipLibCheck": true
+	},
+	// 仅纳入 scripts/ 下的 TypeScript 源文件
+	"include": ["scripts/**/*.ts"]
+}

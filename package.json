@@ -1,0 +1,29 @@
+{
+	"name": "res",
+	"version": "1.0.0",
+	"description": "资源仓库脚本工具集",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"normalizex": "tsx scripts/normalize_core.ts x",
+		"normalizepics": "tsx scripts/normalize_core.ts pics",
+		"genmanifest": "tsx scripts/gen_manifest.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/umfe/res.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/umfe/res/issues"
+	},
+	"homepage": "https://github.com/umfe/res#readme",
+	"devDependencies": {
+		"@types/node": "^26.1.1",
+		"sharp": "^0.35.3",
+		"tsx": "^4.23.0",
+		"typescript": "^7.0.2"
+	}
+}
