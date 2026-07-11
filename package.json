@@ -7,7 +7,7 @@
 	"scripts": {
 		"normalizex": "tsx scripts/normalize_core.ts x",
 		"normalizepics": "tsx scripts/normalize_core.ts pics",
-		"genmanifest": "tsx scripts/gen_manifest.ts"
+		"genma": "tsx scripts/gen_manifest.ts"
 	},
 	"repository": {
 		"type": "git",
