@@ -1,0 +1,57 @@
+name: Sync on push
+
+# 每次 push 到 main 后：
+#   1. 运行 gen_manifest 重新生成 template/_.json，若有变化则自动提交回仓库；
+#   2. 把本次改动的文件（含可能新生成的 _.json）在 jsDelivr 上刷新缓存，
+#      这样写死的 @main URL 能准实时拿到最新内容，而不用等分支缓存 12 小时自动过期。
+#
+# 说明：步骤 1 用内置 GITHUB_TOKEN 自动提交，GitHub 明确规定这种提交不会再触发
+# workflow，所以不会死循环；也正因如此，purge 必须与 genma 在同一次运行里顺序执行，
+# 才能把新提交的 _.json 一起刷掉。purge 的 diff 终点用当前 HEAD（而非 github.event.after），
+# 以覆盖 genma 可能追加的那个提交。
+on:
+    push:
+        branches: [main]
+
+# 需要写权限，才能把重新生成的 _.json 提交回仓库
+permissions:
+    contents: write
+
+concurrency:
+    group: sync-on-push
+    cancel-in-progress: false
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  # 拉取完整 git 历史（0 = 全部）。purge 脚本要 git diff before..after，
+                  # 完整历史能保证 before 永远可达，diff 精确、不会误降级为全刷。
+                  fetch-depth: 0
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Regenerate template/_.json
+              run: npm run genma
+
+            # 若 _.json 有变化则自动提交回仓库；无变化时该 action 会自动跳过，不产生空提交。
+            # 用内置 GITHUB_TOKEN 提交，GitHub 明确规定这种提交不会再触发 workflow，不会死循环。
+            - name: Commit _.json if changed
+              uses: stefanzweifel/git-auto-commit-action@v7.2.0
+              with:
+                  commit_message: 'chore: 自动更新 template/_.json [skip ci]'
+                  file_pattern: template/_.json
+
+            - name: Purge changed files on jsDelivr
+              # after 用当前 HEAD：若上一步提交了 _.json，HEAD 会指向那个新提交，
+              # 从而让 diff 覆盖到 _.json；若没提交，HEAD 仍是本次 push 的 commit，行为不变。
+              run: npx tsx scripts/purge_cdn.ts "${{ github.event.before }}" "$(git rev-parse HEAD)"
