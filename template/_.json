@@ -1,5 +1,15 @@
 {
   "items": {
+    "apache-2.0": {
+      "files": [
+        "LICENSE"
+      ]
+    },
+    "bsd-3-clause": {
+      "files": [
+        "LICENSE"
+      ]
+    },
     "cover": {
       "files": [
         ".claude/settings.local.json",
@@ -10,10 +20,25 @@
         "CLAUDE.md"
       ]
     },
+    "gpl-3.0": {
+      "files": [
+        "LICENSE"
+      ]
+    },
+    "mit": {
+      "files": [
+        "LICENSE"
+      ]
+    },
     "test": {
       "files": [
         "fu/t.md",
         "testing.md"
+      ]
+    },
+    "unlicense": {
+      "files": [
+        "LICENSE"
       ]
     }
   }
