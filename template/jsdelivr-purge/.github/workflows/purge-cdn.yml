@@ -1,0 +1,37 @@
+name: Purge jsDelivr on push
+
+# 每次 push 到目标分支后，精确 purge 本次改动文件在 jsDelivr 上的缓存，
+# 让写死的 @<branch> URL 能准实时拿到最新内容，而不用等分支缓存 12 小时自动过期。
+#
+# 零依赖：purge 脚本是纯 Node ESM（.mjs），不需要 npm install，setup-node 后直接跑。
+# 零配置：仓库名/分支名由 GitHub Actions 内置变量自动提供，脚本会自动读取。
+#
+# 如需 purge 其它分支，把下方 branches 改成对应分支即可（脚本会跟随当前分支）。
+
+on:
+    push:
+        branches: [main]
+
+concurrency:
+    group: purge-cdn-${{ github.ref }}
+    cancel-in-progress: false
+
+jobs:
+    purge:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  # 拉取完整 git 历史（0 = 全部）。purge 脚本要 git diff before..after，
+                  # 完整历史能保证 before 永远可达，diff 精确、不会误降级为全刷。
+                  fetch-depth: 0
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+
+            - name: Purge changed files on jsDelivr
+              # 仓库名/分支名脚本自动从 GITHUB_REPOSITORY / GITHUB_REF_NAME 读取，无需传参。
+              run: node .github/scripts/purge-cdn.mjs "${{ github.event.before }}" "$(git rev-parse HEAD)"
