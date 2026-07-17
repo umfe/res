@@ -1,0 +1,26 @@
+name: Generate fs-index.json
+description: >
+    扫描整个仓库工作区，在仓库根生成 fs-index.json（目录索引）。
+    本 action 只负责「生成文件到工作区」，不做 checkout、不 commit、不 push。
+    调用方须先 checkout 本仓库；生成后由调用方统一 auto-commit，再交给 purge-cdn 刷缓存。
+    产物结构见 actions/fs-index/index.ts 顶部说明：{ allFiles, byDir }。
+    扫描根默认取 GITHUB_WORKSPACE（Actions 内置），本地可用 FS_INDEX_ROOT 覆盖。
+
+inputs:
+    node-version:
+        description: Node.js 主版本，传给 actions/setup-node。
+        required: false
+        default: '22'
+
+runs:
+    using: composite
+    steps:
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+              node-version: ${{ inputs.node-version }}
+
+        # 只生成 fs-index.json 到工作区根；checkout / commit / purge 均由调用方负责。
+        - name: Generate fs-index.json
+          shell: bash
+          run: node "${{ github.action_path }}/index.js"

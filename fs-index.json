@@ -1,0 +1,402 @@
+{
+  "allFiles": [
+    ".claude/settings.local.json",
+    ".editorconfig",
+    ".github/workflows/push.yml",
+    ".gitignore",
+    ".vscode/extensions.json",
+    ".vscode/settings.json",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CONTEXT.md",
+    "actions/fs-index/action.yml",
+    "actions/fs-index/index.js",
+    "actions/fs-index/index.ts",
+    "actions/purge-cdn/action.yml",
+    "actions/purge-cdn/index.js",
+    "actions/purge-cdn/index.ts",
+    "actions/tsconfig.json",
+    "articles/opencode.jsonc.md",
+    "assets/fonts/xaifont.ttf",
+    "assets/fonts/xaifont.woff2",
+    "assets/fonts/xaiforcode.ttf",
+    "assets/fonts/xaiforcode.woff2",
+    "assets/fonts/xaiforfont.ttf",
+    "assets/fonts/xaiforfont.woff2",
+    "package-lock.json",
+    "package.json",
+    "pics/7vb86h.png",
+    "pics/_.png",
+    "pics/as.png",
+    "pics/jb.gif",
+    "pics/jb.png",
+    "pics/kjoylf.png",
+    "pics/meow.gif",
+    "pics/meow.png",
+    "pics/mn.gif",
+    "pics/mn.png",
+    "pics/pcl.png",
+    "pics/pigflies.jpg",
+    "pics/pigflies.png",
+    "pics/pigsfly.gif",
+    "pics/pigsfly.png",
+    "pics/pro.png",
+    "pics/qbt.gif",
+    "pics/qbt.png",
+    "scripts/gen_manifest.ts",
+    "scripts/normalize_core.ts",
+    "template/_.json",
+    "template/apache-2.0/LICENSE",
+    "template/bsd-3-clause/LICENSE",
+    "template/cover/.claude/settings.local.json",
+    "template/cover/.editorconfig",
+    "template/cover/.vscode/extensions.json",
+    "template/cover/.vscode/settings.json",
+    "template/cover/AGENTS.md",
+    "template/cover/CLAUDE.md",
+    "template/gpl-3.0/LICENSE",
+    "template/mit/LICENSE",
+    "template/test/fu/t.md",
+    "template/test/testing.md",
+    "template/unlicense/LICENSE",
+    "trash/lastpics/7vb86h.png",
+    "trash/lastpics/as.png",
+    "trash/lastpics/jb.gif",
+    "trash/lastpics/kjoylf.png",
+    "trash/lastpics/meow.gif",
+    "trash/lastpics/mn.gif",
+    "trash/lastpics/pcl.png",
+    "trash/lastpics/pigflies.jpg",
+    "trash/lastpics/pigsfly.gif",
+    "trash/lastpics/pro.jpg",
+    "trash/lastpics/qbt.gif",
+    "trash/lastx/06bdk3.jpg",
+    "trash/lastx/0lgiz9.jpg",
+    "trash/lastx/1zdmcx.jpg",
+    "trash/lastx/2rftdn.png",
+    "trash/lastx/95tcy1.png",
+    "trash/lastx/ai.png",
+    "trash/lastx/briefiy.png",
+    "trash/lastx/m6mr9p.png",
+    "trash/lastx/p41gfk.jpg",
+    "trash/lastx/qq.gif",
+    "trash/lastx/qqh.gif",
+    "trash/lastx/rauv.png",
+    "trash/lastx/ruvk2.png",
+    "trash/lastx/t3edmm.jpg",
+    "trash/lastx/uouavs.jpg",
+    "trash/lastx/xaidozy.png",
+    "trash/lastx/xaidozym.png",
+    "trash/lastx/xaidozyz.png",
+    "tsconfig.json",
+    "x/06bdk3.png",
+    "x/0lgiz9.png",
+    "x/1zdmcx.png",
+    "x/2rftdn.png",
+    "x/95tcy1.png",
+    "x/ai.png",
+    "x/briefiy.png",
+    "x/m6mr9p.png",
+    "x/p41gfk.png",
+    "x/qq.gif",
+    "x/qq.png",
+    "x/qqh.gif",
+    "x/qqh.png",
+    "x/rauv.png",
+    "x/ruvk.png",
+    "x/ruvk2.png",
+    "x/t3edmm.png",
+    "x/uouavs.png",
+    "x/xaidozy.png",
+    "x/xaidozym.png",
+    "x/xaidozys.png",
+    "x/xaidozyz.png",
+    "x/yoo.png"
+  ],
+  "byDir": {
+    "": {
+      "dirs": [
+        ".claude",
+        ".github",
+        ".vscode",
+        "actions",
+        "articles",
+        "assets",
+        "pics",
+        "scripts",
+        "template",
+        "trash",
+        "x"
+      ],
+      "files": [
+        ".editorconfig",
+        ".gitignore",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CONTEXT.md",
+        "package-lock.json",
+        "package.json",
+        "tsconfig.json"
+      ]
+    },
+    ".claude": {
+      "dirs": [],
+      "files": [
+        "settings.local.json"
+      ]
+    },
+    ".github": {
+      "dirs": [
+        "workflows"
+      ],
+      "files": []
+    },
+    ".github/workflows": {
+      "dirs": [],
+      "files": [
+        "push.yml"
+      ]
+    },
+    ".vscode": {
+      "dirs": [],
+      "files": [
+        "extensions.json",
+        "settings.json"
+      ]
+    },
+    "actions": {
+      "dirs": [
+        "fs-index",
+        "purge-cdn"
+      ],
+      "files": [
+        "tsconfig.json"
+      ]
+    },
+    "actions/fs-index": {
+      "dirs": [],
+      "files": [
+        "action.yml",
+        "index.js",
+        "index.ts"
+      ]
+    },
+    "actions/purge-cdn": {
+      "dirs": [],
+      "files": [
+        "action.yml",
+        "index.js",
+        "index.ts"
+      ]
+    },
+    "articles": {
+      "dirs": [],
+      "files": [
+        "opencode.jsonc.md"
+      ]
+    },
+    "assets": {
+      "dirs": [
+        "fonts"
+      ],
+      "files": []
+    },
+    "assets/fonts": {
+      "dirs": [],
+      "files": [
+        "xaifont.ttf",
+        "xaifont.woff2",
+        "xaiforcode.ttf",
+        "xaiforcode.woff2",
+        "xaiforfont.ttf",
+        "xaiforfont.woff2"
+      ]
+    },
+    "pics": {
+      "dirs": [],
+      "files": [
+        "7vb86h.png",
+        "_.png",
+        "as.png",
+        "jb.gif",
+        "jb.png",
+        "kjoylf.png",
+        "meow.gif",
+        "meow.png",
+        "mn.gif",
+        "mn.png",
+        "pcl.png",
+        "pigflies.jpg",
+        "pigflies.png",
+        "pigsfly.gif",
+        "pigsfly.png",
+        "pro.png",
+        "qbt.gif",
+        "qbt.png"
+      ]
+    },
+    "scripts": {
+      "dirs": [],
+      "files": [
+        "gen_manifest.ts",
+        "normalize_core.ts"
+      ]
+    },
+    "template": {
+      "dirs": [
+        "apache-2.0",
+        "bsd-3-clause",
+        "cover",
+        "gpl-3.0",
+        "mit",
+        "test",
+        "unlicense"
+      ],
+      "files": [
+        "_.json"
+      ]
+    },
+    "template/apache-2.0": {
+      "dirs": [],
+      "files": [
+        "LICENSE"
+      ]
+    },
+    "template/bsd-3-clause": {
+      "dirs": [],
+      "files": [
+        "LICENSE"
+      ]
+    },
+    "template/cover": {
+      "dirs": [
+        ".claude",
+        ".vscode"
+      ],
+      "files": [
+        ".editorconfig",
+        "AGENTS.md",
+        "CLAUDE.md"
+      ]
+    },
+    "template/cover/.claude": {
+      "dirs": [],
+      "files": [
+        "settings.local.json"
+      ]
+    },
+    "template/cover/.vscode": {
+      "dirs": [],
+      "files": [
+        "extensions.json",
+        "settings.json"
+      ]
+    },
+    "template/gpl-3.0": {
+      "dirs": [],
+      "files": [
+        "LICENSE"
+      ]
+    },
+    "template/mit": {
+      "dirs": [],
+      "files": [
+        "LICENSE"
+      ]
+    },
+    "template/test": {
+      "dirs": [
+        "fu"
+      ],
+      "files": [
+        "testing.md"
+      ]
+    },
+    "template/test/fu": {
+      "dirs": [],
+      "files": [
+        "t.md"
+      ]
+    },
+    "template/unlicense": {
+      "dirs": [],
+      "files": [
+        "LICENSE"
+      ]
+    },
+    "trash": {
+      "dirs": [
+        "lastpics",
+        "lastx"
+      ],
+      "files": []
+    },
+    "trash/lastpics": {
+      "dirs": [],
+      "files": [
+        "7vb86h.png",
+        "as.png",
+        "jb.gif",
+        "kjoylf.png",
+        "meow.gif",
+        "mn.gif",
+        "pcl.png",
+        "pigflies.jpg",
+        "pigsfly.gif",
+        "pro.jpg",
+        "qbt.gif"
+      ]
+    },
+    "trash/lastx": {
+      "dirs": [],
+      "files": [
+        "06bdk3.jpg",
+        "0lgiz9.jpg",
+        "1zdmcx.jpg",
+        "2rftdn.png",
+        "95tcy1.png",
+        "ai.png",
+        "briefiy.png",
+        "m6mr9p.png",
+        "p41gfk.jpg",
+        "qq.gif",
+        "qqh.gif",
+        "rauv.png",
+        "ruvk2.png",
+        "t3edmm.jpg",
+        "uouavs.jpg",
+        "xaidozy.png",
+        "xaidozym.png",
+        "xaidozyz.png"
+      ]
+    },
+    "x": {
+      "dirs": [],
+      "files": [
+        "06bdk3.png",
+        "0lgiz9.png",
+        "1zdmcx.png",
+        "2rftdn.png",
+        "95tcy1.png",
+        "ai.png",
+        "briefiy.png",
+        "m6mr9p.png",
+        "p41gfk.png",
+        "qq.gif",
+        "qq.png",
+        "qqh.gif",
+        "qqh.png",
+        "rauv.png",
+        "ruvk.png",
+        "ruvk2.png",
+        "t3edmm.png",
+        "uouavs.png",
+        "xaidozy.png",
+        "xaidozym.png",
+        "xaidozys.png",
+        "xaidozyz.png",
+        "yoo.png"
+      ]
+    }
+  }
+}

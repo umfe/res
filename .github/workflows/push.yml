@@ -1,14 +1,19 @@
 name: Sync on push
 
 # 每次 push 到 main 后：
-#   1. 运行 gen_manifest 重新生成 template/_.json，若有变化则自动提交回仓库；
-#   2. 把本次改动的文件（含可能新生成的 _.json）在 jsDelivr 上刷新缓存，
+#   1. 运行 gen_manifest 重新生成 template/_.json；
+#   2. 运行 fs-index action 重新生成根目录 fs-index.json（整棵目录树索引）；
+#   3. 若上述任一文件有变化则一次性自动提交回仓库（无变化则跳过，不产生空提交）；
+#   4. 把本次改动的文件（含可能新生成的 _.json / fs-index.json）在 jsDelivr 上刷新缓存，
 #      这样写死的 @main URL 能准实时拿到最新内容，而不用等分支缓存 12 小时自动过期。
 #
-# 说明：步骤 1 用内置 GITHUB_TOKEN 自动提交，GitHub 明确规定这种提交不会再触发
-# workflow，所以不会死循环；也正因如此，purge 必须与 genma 在同一次运行里顺序执行，
-# 才能把新提交的 _.json 一起刷掉。purge 的 diff 终点用当前 HEAD（而非 github.event.after），
-# 以覆盖 genma 可能追加的那个提交。
+# 说明：步骤 3 用内置 GITHUB_TOKEN 自动提交，GitHub 明确规定这种提交不会再触发
+# workflow，所以不会死循环；也正因如此，purge 必须与生成步骤在同一次运行里顺序执行，
+# 才能把新提交的文件一起刷掉。purge 的 diff 终点用当前 HEAD（而非 github.event.after），
+# 以覆盖自动提交可能追加的那个提交。
+#
+# 生成器约定：genma 与 fs-index 均产出「固定内容、固定顺序」的文件（键/数组全排序、
+# 缩进换行固定），相同工作区内容必产出逐字节相同结果，内容不变则不 diff、不 push。
 on:
     push:
         branches: [main]
@@ -43,13 +48,20 @@ jobs:
             - name: Regenerate template/_.json
               run: npm run genma
 
-            # 若 _.json 有变化则自动提交回仓库；无变化时该 action 会自动跳过，不产生空提交。
+            # 生成仓库根 fs-index.json（目录索引）。该 action 只写文件到工作区，
+            # 不 checkout / 不 commit / 不 push；提交与 purge 由后续步骤统一负责。
+            - name: Generate fs-index.json
+              uses: ./actions/fs-index
+
+            # 若 template/_.json 或 fs-index.json 有变化则一次性提交回仓库；无变化时
+            # 该 action 自动跳过，不产生空提交。genma 与 fs-index 均产出固定内容顺序，
+            # 内容不变则不会 diff，避免无意义 push。
             # 用内置 GITHUB_TOKEN 提交，GitHub 明确规定这种提交不会再触发 workflow，不会死循环。
-            - name: Commit _.json if changed
+            - name: Commit generated files if changed
               uses: stefanzweifel/git-auto-commit-action@v7.2.0
               with:
-                  commit_message: 'chore: 自动更新 template/_.json [skip ci]'
-                  file_pattern: template/_.json
+                  commit_message: 'chore: 自动更新 template/_.json 与 fs-index.json [skip ci]'
+                  file_pattern: template/_.json fs-index.json
 
             - name: Purge changed files on jsDelivr
               # before/after 均为选填：默认 event.before → 当前 HEAD（含 auto-commit 后 tip）。

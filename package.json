@@ -8,7 +8,7 @@
 		"normalizex": "tsx scripts/normalize_core.ts x",
 		"normalizepics": "tsx scripts/normalize_core.ts pics",
 		"genma": "tsx scripts/gen_manifest.ts",
-		"build:actions": "tsc -p tsconfig.actions.json"
+		"build:actions": "tsc -p actions/tsconfig.json"
 	},
 	"repository": {
 		"type": "git",

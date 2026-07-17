@@ -16,4 +16,4 @@
 - `actions/` 下每个 action 的源码是 `index.ts`，编译产物是同目录的 `index.js`。
 - 改动任何 `actions/*/index.ts` 后，**必须**运行 `npm run build:actions` 重新编译，再一起提交源码和产物。
 - 产物 `index.js` 提交进 git（action 运行时直接 `node index.js`，不依赖 tsx/tsc）。
-- 编译配置：`tsconfig.actions.json`。
+- 编译配置：`actions/tsconfig.json`（放在 `actions/` 下并用默认文件名，编辑器 TS server 会自动关联，避免误报 `process`/`node:` 找不到）。

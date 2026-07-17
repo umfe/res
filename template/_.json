@@ -25,12 +25,6 @@
         "LICENSE"
       ]
     },
-    "jsdelivr-purge": {
-      "files": [
-        ".github/scripts/purge-cdn.mjs",
-        ".github/workflows/purge-cdn.yml"
-      ]
-    },
     "mit": {
       "files": [
         "LICENSE"
