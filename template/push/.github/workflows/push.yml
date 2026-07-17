@@ -1,0 +1,33 @@
+name: Sync on push
+
+on:
+    push:
+        branches: [main]
+
+permissions:
+    contents: write
+
+concurrency:
+    group: sync-on-push
+    cancel-in-progress: false
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Generate fs-index.json
+              uses: umfe/res/actions/fs-index@main
+
+            - name: Commit generated files if changed
+              uses: stefanzweifel/git-auto-commit-action@v7.2.0
+              with:
+                  commit_message: '---'
+                  file_pattern: fs-index.json
+
+            - name: Purge changed files on jsDelivr
+              uses: umfe/res/actions/purge-cdn@main
