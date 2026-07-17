@@ -59,35 +59,6 @@
     "template/test/fu/t.md",
     "template/test/testing.md",
     "template/unlicense/LICENSE",
-    "trash/lastpics/7vb86h.png",
-    "trash/lastpics/as.png",
-    "trash/lastpics/jb.gif",
-    "trash/lastpics/kjoylf.png",
-    "trash/lastpics/meow.gif",
-    "trash/lastpics/mn.gif",
-    "trash/lastpics/pcl.png",
-    "trash/lastpics/pigflies.jpg",
-    "trash/lastpics/pigsfly.gif",
-    "trash/lastpics/pro.jpg",
-    "trash/lastpics/qbt.gif",
-    "trash/lastx/06bdk3.jpg",
-    "trash/lastx/0lgiz9.jpg",
-    "trash/lastx/1zdmcx.jpg",
-    "trash/lastx/2rftdn.png",
-    "trash/lastx/95tcy1.png",
-    "trash/lastx/ai.png",
-    "trash/lastx/briefiy.png",
-    "trash/lastx/m6mr9p.png",
-    "trash/lastx/p41gfk.jpg",
-    "trash/lastx/qq.gif",
-    "trash/lastx/qqh.gif",
-    "trash/lastx/rauv.png",
-    "trash/lastx/ruvk2.png",
-    "trash/lastx/t3edmm.jpg",
-    "trash/lastx/uouavs.jpg",
-    "trash/lastx/xaidozy.png",
-    "trash/lastx/xaidozym.png",
-    "trash/lastx/xaidozyz.png",
     "tsconfig.json",
     "x/06bdk3.png",
     "x/0lgiz9.png",
@@ -125,7 +96,6 @@
         "pics",
         "scripts",
         "template",
-        "trash",
         "x"
       ],
       "files": [
@@ -322,52 +292,6 @@
       "dirs": [],
       "files": [
         "LICENSE"
-      ]
-    },
-    "trash": {
-      "dirs": [
-        "lastpics",
-        "lastx"
-      ],
-      "files": []
-    },
-    "trash/lastpics": {
-      "dirs": [],
-      "files": [
-        "7vb86h.png",
-        "as.png",
-        "jb.gif",
-        "kjoylf.png",
-        "meow.gif",
-        "mn.gif",
-        "pcl.png",
-        "pigflies.jpg",
-        "pigsfly.gif",
-        "pro.jpg",
-        "qbt.gif"
-      ]
-    },
-    "trash/lastx": {
-      "dirs": [],
-      "files": [
-        "06bdk3.jpg",
-        "0lgiz9.jpg",
-        "1zdmcx.jpg",
-        "2rftdn.png",
-        "95tcy1.png",
-        "ai.png",
-        "briefiy.png",
-        "m6mr9p.png",
-        "p41gfk.jpg",
-        "qq.gif",
-        "qqh.gif",
-        "rauv.png",
-        "ruvk2.png",
-        "t3edmm.jpg",
-        "uouavs.jpg",
-        "xaidozy.png",
-        "xaidozym.png",
-        "xaidozyz.png"
       ]
     },
     "x": {
