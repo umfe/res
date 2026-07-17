@@ -1,0 +1,42 @@
+name: Purge jsDelivr CDN
+description: >
+  精确 purge 改动文件在 jsDelivr 上的缓存。默认 before=github.event.before、
+  after=当前工作区 HEAD（含同 job 内 auto-commit 后的 tip）。
+  非 push 触发时 event.before 通常为空，会降级为「相对空树」全量 purge。
+  本 action 会 setup-node；不负责 checkout（避免覆盖工作区、与 auto-commit 冲突）。
+  调用方须先 checkout 本仓库，且强烈建议 fetch-depth: 0，否则 before 可能不可达而全刷。
+  若 before 不可达且仓库仍是浅克隆，会尝试 git fetch --unshallow 再 diff。
+  有生成+自动 commit 时，须放在 commit 之后调用。
+  仓库名/分支默认读 GITHUB_REPOSITORY / GITHUB_REF_NAME，可用 PURGE_REPO / PURGE_BRANCH 覆盖。
+
+inputs:
+  before:
+    description: >
+      diff 起点 commit SHA。默认 github.event.before（仅 push 事件可靠）。
+      空 / null / 全 0 / 对象不可达 → 降级为空树，等于相对 after 全量 purge。
+    required: false
+    default: ${{ github.event.before }}
+  after:
+    description: >
+      diff 终点 commit SHA。默认当前工作区 git rev-parse HEAD（不是 github.sha，
+      以便覆盖同 job 内刚 auto-commit 的提交）。一般无需传入。
+    required: false
+    default: ''
+  node-version:
+    description: Node.js 主版本，传给 actions/setup-node。
+    required: false
+    default: '22'
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    # before/after 默认值、空值处理、浅克隆兜底全在 index.ts（编译为 index.js）内完成。
+    # checkout / fetch-depth:0 须由调用方完成（避免覆盖工作区 / 冲掉 auto-commit 状态）。
+    - name: Purge changed files on jsDelivr
+      shell: bash
+      run: node "${{ github.action_path }}/index.js" "${{ inputs.before }}" "${{ inputs.after }}"

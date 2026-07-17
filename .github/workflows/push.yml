@@ -52,6 +52,6 @@ jobs:
                   file_pattern: template/_.json
 
             - name: Purge changed files on jsDelivr
-              # after 用当前 HEAD：若上一步提交了 _.json，HEAD 会指向那个新提交，
-              # 从而让 diff 覆盖到 _.json；若没提交，HEAD 仍是本次 push 的 commit，行为不变。
-              run: npx tsx scripts/purge_cdn.ts "${{ github.event.before }}" "$(git rev-parse HEAD)"
+              # before/after 均为选填：默认 event.before → 当前 HEAD（含 auto-commit 后 tip）。
+              # 须放在 auto-commit 之后：GITHUB_TOKEN 提交不会再触发 workflow，只能同 job 内顺带 purge。
+              uses: ./actions/purge-cdn

@@ -1,0 +1,26 @@
+{
+	// actions/ 目录的 TypeScript 编译配置。
+	// 源码（index.ts）和产物（index.js）在同一目录下（actions/<name>/）。
+	// 产物须提交进 git，action 运行时直接 node index.js。
+	// 编译命令：npm run build:actions
+	"compilerOptions": {
+		// 目标与模块系统：现代 Node + ESM
+		"target": "ES2022",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		// 不设 outDir：tsc 原地输出 .js 到 .ts 同目录（actions/<name>/index.js）
+		// Node 类型定义
+		"types": ["node"],
+		// 严格模式
+		"strict": true,
+		// 不生成声明文件和 source map（action 不需要）
+		"declaration": false,
+		"sourceMap": false,
+		// 允许 default import 互操作
+		"esModuleInterop": true,
+		// 跳过第三方库声明文件的类型检查
+		"skipLibCheck": true
+	},
+	// 只编译 actions/ 下各 action 的入口文件
+	"include": ["actions/*/index.ts"]
+}
