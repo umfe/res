@@ -30,6 +30,11 @@
         "LICENSE"
       ]
     },
+    "push": {
+      "files": [
+        ".github/workflows/push.yml"
+      ]
+    },
     "test": {
       "files": [
         "fu/t.md",
