@@ -32,7 +32,7 @@
     },
     "push": {
       "files": [
-        ".github/workflows/push.yml"
+        ".github/workflows/sync.yml"
       ]
     },
     "test": {

@@ -56,7 +56,7 @@
     "template/cover/CLAUDE.md",
     "template/gpl-3.0/LICENSE",
     "template/mit/LICENSE",
-    "template/push/.github/workflows/push.yml",
+    "template/push/.github/workflows/sync.yml",
     "template/test/fu/t.md",
     "template/test/testing.md",
     "template/unlicense/LICENSE",
@@ -291,7 +291,7 @@
     "template/push/.github/workflows": {
       "dirs": [],
       "files": [
-        "push.yml"
+        "sync.yml"
       ]
     },
     "template/test": {
