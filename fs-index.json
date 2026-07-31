@@ -23,6 +23,8 @@
     "assets/fonts/xaiforcode.woff2",
     "assets/fonts/xaiforfont.ttf",
     "assets/fonts/xaiforfont.woff2",
+    "assets/fonts/xaimcf.ttf",
+    "assets/fonts/xaimcf.woff2",
     "package-lock.json",
     "package.json",
     "pics/7vb86h.png",
@@ -180,7 +182,9 @@
         "xaiforcode.ttf",
         "xaiforcode.woff2",
         "xaiforfont.ttf",
-        "xaiforfont.woff2"
+        "xaiforfont.woff2",
+        "xaimcf.ttf",
+        "xaimcf.woff2"
       ]
     },
     "pics": {
