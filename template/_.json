@@ -20,6 +20,11 @@
         "CLAUDE.md"
       ]
     },
+    "gitignore-node": {
+      "files": [
+        ".gitignore"
+      ]
+    },
     "gpl-3.0": {
       "files": [
         "LICENSE"
