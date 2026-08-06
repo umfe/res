@@ -56,6 +56,7 @@
     "template/cover/.vscode/settings.json",
     "template/cover/AGENTS.md",
     "template/cover/CLAUDE.md",
+    "template/gitignore-node/.gitignore",
     "template/gpl-3.0/LICENSE",
     "template/mit/LICENSE",
     "template/push/.github/workflows/sync.yml",
@@ -222,6 +223,7 @@
         "apache-2.0",
         "bsd-3-clause",
         "cover",
+        "gitignore-node",
         "gpl-3.0",
         "mit",
         "push",
@@ -266,6 +268,12 @@
       "files": [
         "extensions.json",
         "settings.json"
+      ]
+    },
+    "template/gitignore-node": {
+      "dirs": [],
+      "files": [
+        ".gitignore"
       ]
     },
     "template/gpl-3.0": {
