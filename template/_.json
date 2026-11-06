@@ -40,6 +40,11 @@
         ".github/workflows/sync.yml"
       ]
     },
+    "run-code-py": {
+      "files": [
+        "run-code-py.md"
+      ]
+    },
     "test": {
       "files": [
         "fu/t.md",
