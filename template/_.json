@@ -1,5 +1,10 @@
 {
   "items": {
+    "agent-instructions": {
+      "files": [
+        "run-code-py.md"
+      ]
+    },
     "apache-2.0": {
       "files": [
         "LICENSE"
@@ -38,11 +43,6 @@
     "push": {
       "files": [
         ".github/workflows/sync.yml"
-      ]
-    },
-    "run-code-py": {
-      "files": [
-        "run-code-py.md"
       ]
     },
     "test": {
