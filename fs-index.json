@@ -48,6 +48,7 @@
     "scripts/gen_manifest.ts",
     "scripts/normalize_core.ts",
     "template/_.json",
+    "template/agent-instructions/run-code-py.md",
     "template/apache-2.0/LICENSE",
     "template/bsd-3-clause/LICENSE",
     "template/cover/.claude/settings.local.json",
@@ -60,7 +61,6 @@
     "template/gpl-3.0/LICENSE",
     "template/mit/LICENSE",
     "template/push/.github/workflows/sync.yml",
-    "template/run-code-py/run-code-py.md",
     "template/test/fu/t.md",
     "template/test/testing.md",
     "template/unlicense/LICENSE",
@@ -221,6 +221,7 @@
     },
     "template": {
       "dirs": [
+        "agent-instructions",
         "apache-2.0",
         "bsd-3-clause",
         "cover",
@@ -228,12 +229,17 @@
         "gpl-3.0",
         "mit",
         "push",
-        "run-code-py",
         "test",
         "unlicense"
       ],
       "files": [
         "_.json"
+      ]
+    },
+    "template/agent-instructions": {
+      "dirs": [],
+      "files": [
+        "run-code-py.md"
       ]
     },
     "template/apache-2.0": {
@@ -306,12 +312,6 @@
       "dirs": [],
       "files": [
         "sync.yml"
-      ]
-    },
-    "template/run-code-py": {
-      "dirs": [],
-      "files": [
-        "run-code-py.md"
       ]
     },
     "template/test": {
