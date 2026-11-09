@@ -48,7 +48,7 @@
     "scripts/gen_manifest.ts",
     "scripts/normalize_core.ts",
     "template/_.json",
-    "template/agent-instructions/run-code-py.md",
+    "template/agent-instruction run-code-py/agent-instructions/run-code-py.md",
     "template/apache-2.0/LICENSE",
     "template/bsd-3-clause/LICENSE",
     "template/cover/.claude/settings.local.json",
@@ -221,7 +221,7 @@
     },
     "template": {
       "dirs": [
-        "agent-instructions",
+        "agent-instruction run-code-py",
         "apache-2.0",
         "bsd-3-clause",
         "cover",
@@ -236,7 +236,13 @@
         "_.json"
       ]
     },
-    "template/agent-instructions": {
+    "template/agent-instruction run-code-py": {
+      "dirs": [
+        "agent-instructions"
+      ],
+      "files": []
+    },
+    "template/agent-instruction run-code-py/agent-instructions": {
       "dirs": [],
       "files": [
         "run-code-py.md"

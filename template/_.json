@@ -1,8 +1,8 @@
 {
   "items": {
-    "agent-instructions": {
+    "agent-instruction run-code-py": {
       "files": [
-        "run-code-py.md"
+        "agent-instructions/run-code-py.md"
       ]
     },
     "apache-2.0": {
