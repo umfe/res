@@ -3,6 +3,7 @@
     ".agents/skills/git-commit/SKILL.md",
     ".agents/skills/git-commit/references/commit-message-prompt.md",
     ".claude/settings.local.json",
+    ".codex/AGENTS.md",
     ".editorconfig",
     ".github/workflows/push.yml",
     ".gitignore",
@@ -97,6 +98,7 @@
       "dirs": [
         ".agents",
         ".claude",
+        ".codex",
         ".github",
         ".vscode",
         "actions",
@@ -148,6 +150,12 @@
       "dirs": [],
       "files": [
         "settings.local.json"
+      ]
+    },
+    ".codex": {
+      "dirs": [],
+      "files": [
+        "AGENTS.md"
       ]
     },
     ".github": {
