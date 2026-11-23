@@ -1,5 +1,7 @@
 {
   "allFiles": [
+    ".agents/skills/git-commit/SKILL.md",
+    ".agents/skills/git-commit/references/commit-message-prompt.md",
     ".claude/settings.local.json",
     ".editorconfig",
     ".github/workflows/push.yml",
@@ -93,6 +95,7 @@
   "byDir": {
     "": {
       "dirs": [
+        ".agents",
         ".claude",
         ".github",
         ".vscode",
@@ -113,6 +116,32 @@
         "package-lock.json",
         "package.json",
         "tsconfig.json"
+      ]
+    },
+    ".agents": {
+      "dirs": [
+        "skills"
+      ],
+      "files": []
+    },
+    ".agents/skills": {
+      "dirs": [
+        "git-commit"
+      ],
+      "files": []
+    },
+    ".agents/skills/git-commit": {
+      "dirs": [
+        "references"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    ".agents/skills/git-commit/references": {
+      "dirs": [],
+      "files": [
+        "commit-message-prompt.md"
       ]
     },
     ".claude": {
