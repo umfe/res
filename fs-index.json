@@ -63,6 +63,8 @@
     "template/gitignore-node/.gitignore",
     "template/gpl-3.0/LICENSE",
     "template/mit/LICENSE",
+    "template/npm-publish/.github/workflows/publish.yml",
+    "template/pnpm-publish/.github/workflows/publish.yml",
     "template/push/.github/workflows/sync.yml",
     "template/test/fu/t.md",
     "template/test/testing.md",
@@ -266,6 +268,8 @@
         "gitignore-node",
         "gpl-3.0",
         "mit",
+        "npm-publish",
+        "pnpm-publish",
         "push",
         "test",
         "unlicense"
@@ -338,6 +342,42 @@
       "dirs": [],
       "files": [
         "LICENSE"
+      ]
+    },
+    "template/npm-publish": {
+      "dirs": [
+        ".github"
+      ],
+      "files": []
+    },
+    "template/npm-publish/.github": {
+      "dirs": [
+        "workflows"
+      ],
+      "files": []
+    },
+    "template/npm-publish/.github/workflows": {
+      "dirs": [],
+      "files": [
+        "publish.yml"
+      ]
+    },
+    "template/pnpm-publish": {
+      "dirs": [
+        ".github"
+      ],
+      "files": []
+    },
+    "template/pnpm-publish/.github": {
+      "dirs": [
+        "workflows"
+      ],
+      "files": []
+    },
+    "template/pnpm-publish/.github/workflows": {
+      "dirs": [],
+      "files": [
+        "publish.yml"
       ]
     },
     "template/push": {
