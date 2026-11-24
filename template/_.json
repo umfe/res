@@ -40,6 +40,16 @@
         "LICENSE"
       ]
     },
+    "npm-publish": {
+      "files": [
+        ".github/workflows/publish.yml"
+      ]
+    },
+    "pnpm-publish": {
+      "files": [
+        ".github/workflows/publish.yml"
+      ]
+    },
     "push": {
       "files": [
         ".github/workflows/sync.yml"
