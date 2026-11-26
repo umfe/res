@@ -7,6 +7,7 @@
     ".editorconfig",
     ".github/workflows/push.yml",
     ".gitignore",
+    ".vimrc",
     ".vscode/extensions.json",
     ".vscode/settings.json",
     "AGENTS.md",
@@ -50,6 +51,7 @@
     "pics/qbt.png",
     "scripts/gen_manifest.ts",
     "scripts/normalize_core.ts",
+    "sh/git-alias.sh",
     "template/_.json",
     "template/agent-instruction run-code-py/agent-instructions/run-code-py.md",
     "template/apache-2.0/LICENSE",
@@ -108,12 +110,14 @@
         "assets",
         "pics",
         "scripts",
+        "sh",
         "template",
         "x"
       ],
       "files": [
         ".editorconfig",
         ".gitignore",
+        ".vimrc",
         "AGENTS.md",
         "CLAUDE.md",
         "CONTEXT.md",
@@ -257,6 +261,12 @@
       "files": [
         "gen_manifest.ts",
         "normalize_core.ts"
+      ]
+    },
+    "sh": {
+      "dirs": [],
+      "files": [
+        "git-alias.sh"
       ]
     },
     "template": {
